@@ -11,7 +11,7 @@ import lombok.*;
 //@Data  -- > parece que colocar apenas essa anotação substitui todas essas outras de cima, pesquisar!
 public class JornadaTrabalho {
 
-    private long id;
+    private Long id;
     private String descricao;
 
 }

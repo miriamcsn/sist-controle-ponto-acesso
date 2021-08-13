@@ -2,6 +2,7 @@ package com.dio.projspring.model;
 
 import lombok.*;
 
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Getter
@@ -12,9 +13,11 @@ import javax.persistence.OneToMany;
 @Builder
 public class Localidade {
 
-    private long id;
+    private Long id;
     private String descricao;
-    @OneToMany //Um nível de acesso pode ter N localidades (diretor pode acessar todos os andares da empresa p. ex)
+
+    @ManyToOne // muitos níveis de acesso podem estar associados a uma localidade específica
+    // (diretor, gerente e estagiário podem acessar o primeiro andar da empresa, por exemplo)
     private NivelAcesso nivelAcesso;
 
 }
